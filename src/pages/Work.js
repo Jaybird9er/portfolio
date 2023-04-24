@@ -1,7 +1,10 @@
+import data from '../assets/data'
+import Cards from '../components/Cards';
+
 const Work = function () {
     return (
         <div className="work">
-            <p>work goes here</p>
+            <Cards array={data} />
         </div>
     );
 }
