@@ -8,6 +8,13 @@ let projects = [
 		image: "ProResume_Img",
 		body: "Todays Agenda\n\n- Walk Dog\n- Feed fish\n- Play basketball\n- Eat a salad",
 	},
+	{
+		id: 2,
+		title: "Test",
+		blurb: "A test",
+		image: "ProResume_Img",
+		body: "Todays Agenda\n\n- Walk Dog\n- Feed fish\n- Play basketball\n- Eat a salad",
+	},
 	// {
 	// 	id: 2,
 	// 	body: "Bob from bar down the \n\n- Take out trash\n- Eat food",

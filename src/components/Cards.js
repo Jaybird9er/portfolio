@@ -1,17 +1,4 @@
-function Card({ id, title, blurb, image }) {    
-
-    return (
-        <>
-            <p>
-                {id}. {title}
-            </p>
-            <p>
-                {blurb}
-            </p>
-            <img className='cardImg' src={require('../images/' + image + '.png')} alt="a pic" />
-        </>
-    );
-}
+import Card from "./Card";
 
 const Cards = function({array}) {
     return (
