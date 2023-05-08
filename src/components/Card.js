@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-export default function Card({ id, title, blurb, image }) {    
+export default function Card({ id, title, blurb, frontImage, backImage, tech }) {    
 
-    const [showImg, setShowImg] = useState(true)
+    const [showImg, setShowImg] = useState(false)
 
     function Button() {
         function handleClick() {
@@ -16,17 +16,24 @@ export default function Card({ id, title, blurb, image }) {
         )
     }
 
-
     return (
         <>
-            <p>
-                {id}. {title}
-            </p>
-            <p id="blurb">
-                {blurb}
-            </p>
-            <Button />
-            <img hidden={showImg} className="cardImg" src={require('../images/' + image + '.png')} alt="a pic" />
+            <div className="card-container">
+                <div className="card">
+                    <div className="card-front" hidden={showImg}>
+                        <Button />
+                        <p className="title">{title}</p>
+                        <img className="cardImg" src={require("../images/" + frontImage + ".png")} alt="a pic" />
+                        <p className="blurb">{blurb}</p>
+                    </div>
+                    <div className="card-front" hidden={!showImg}>
+                        <Button />
+                        <p className="title">{title}</p>
+                        <img className="cardImg" src={require("../images/" + backImage + ".png")} alt="a pic" />
+                        <p className="description">{tech}</p>
+                    </div>
+                </div>
+            </div>
         </>
     );
 }

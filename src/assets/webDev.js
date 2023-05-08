@@ -3,18 +3,26 @@
 let projects = [
 	{
 		id: 1,
+		// title frame
 		title: "ProResume Solutions",
+		// card front
+		frontImage: "ProResume_Img",
 		blurb: "A storefront for prospective clients",
-		image: "ProResume_Img",
-		body: "Todays Agenda\n\n- Walk Dog\n- Feed fish\n- Play basketball\n- Eat a salad",
+		// card back
+		backImage: "ProResume_Img",
+		tech: [
+			0, 
+			1, 
+			2,
+		],
 	},
-	{
-		id: 2,
-		title: "Test",
-		blurb: "A test",
-		image: "ProResume_Img",
-		body: "Todays Agenda\n\n- Walk Dog\n- Feed fish\n- Play basketball\n- Eat a salad",
-	},
+	// {
+	// 	id: 2,
+	// 	title: "Test",
+	// 	blurb: "A test",
+	// 	image: "ProResume_Img",
+	// 	body: "Todays Agenda\n\n- Walk Dog\n- Feed fish\n- Play basketball\n- Eat a salad",
+	// },
 	// {
 	// 	id: 2,
 	// 	body: "Bob from bar down the \n\n- Take out trash\n- Eat food",
@@ -32,17 +40,12 @@ export default projects;
 // Card Elements
 
 /*
-	Title
-	-button to open card-
-	*
-		Card Image
-		Project Goal Description
-		Process
-		Languages
-		Links:
-			>card page (for sharing purposes)
-			>github page
-			>live link
-	*
-	Blurb to describe the project
+	(frame card)
+	Title	
+		(card front) 
+			Image 1
+			Project Description
+		(card back)
+			Image 2
+			Technologies
  */

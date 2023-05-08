@@ -8,8 +8,10 @@ const Cards = function({array}) {
                 <Card 
                     id={item.id} 
                     title={item.title}
+                    frontImage={item.frontImage}
                     blurb={item.blurb}
-                    image={item.image}
+                    backImage={item.backImage}
+                    tech={item.tech}
                 /> 
             </div>
         )
