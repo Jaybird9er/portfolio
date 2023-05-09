@@ -9,11 +9,26 @@ let projects = [
 		frontImage: "ProResume_Img",
 		blurb: "A storefront for prospective clients",
 		// card back
-		backImage: "ProResume_Img",
+		backImage: "Test_Img",
 		tech: [
 			0, 
 			1, 
 			2,
+		],
+	},
+	{
+		id: 2,
+		// title frame
+		title: "test",
+		// card front
+		frontImage: "ProResume_Img",
+		blurb: "a test card",
+		// card back
+		backImage: "Test_Img",
+		tech: [
+			3,
+			4,
+			5,
 		],
 	},
 	// {

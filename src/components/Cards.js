@@ -2,8 +2,7 @@ import Card from "./Card";
 
 const Cards = function({array}) {
     return (
-        array.map(
-            (item, index) => 
+        array.map((item, index) => 
             <div className={index} key={index}>
                 <Card 
                     id={item.id} 

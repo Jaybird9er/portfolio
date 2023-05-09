@@ -2,16 +2,22 @@ import { useState } from "react";
 
 export default function Card({ id, title, blurb, frontImage, backImage, tech }) {    
 
-    const [showImg, setShowImg] = useState(false)
+    const [showSide, setShowSide] = useState(false)
 
     function Button() {
         function handleClick() {
-            showImg === true ? setShowImg(false) : setShowImg(true);
+            const cardDiv = document.querySelector(".card");
+
+            showSide === false ?
+            cardDiv.setAttribute("class", `card ${id} flip`) :
+            cardDiv.setAttribute("class", `card ${id}`);
+            
+            setShowSide(!showSide)
         }
     
         return (
             <button onClick={handleClick}>
-                {showImg === true ? <>&or;</> : <>&and;</>}
+                {showSide === true ? <>&or;</> : <>&and;</>}
             </button>
         )
     }
@@ -19,14 +25,14 @@ export default function Card({ id, title, blurb, frontImage, backImage, tech }) 
     return (
         <>
             <div className="card-container">
-                <div className="card">
-                    <div className="card-front" hidden={showImg}>
+                <div className={"card " + id}>
+                    <div className="card-front">
                         <Button />
                         <p className="title">{title}</p>
                         <img className="cardImg" src={require("../images/" + frontImage + ".png")} alt="a pic" />
                         <p className="blurb">{blurb}</p>
                     </div>
-                    <div className="card-front" hidden={!showImg}>
+                    <div className="card-back">
                         <Button />
                         <p className="title">{title}</p>
                         <img className="cardImg" src={require("../images/" + backImage + ".png")} alt="a pic" />
