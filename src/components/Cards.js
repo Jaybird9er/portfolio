@@ -3,7 +3,7 @@ import Card from "./Card";
 const Cards = function({array}) {
     return (
         array.map((item, index) => 
-            <div className={index} key={index}>
+            <div className="card-container" key={index}>
                 <Card 
                     id={item.id} 
                     title={item.title}
@@ -11,7 +11,7 @@ const Cards = function({array}) {
                     blurb={item.blurb}
                     backImage={item.backImage}
                     tech={item.tech}
-                /> 
+                />
             </div>
         )
     );

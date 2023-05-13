@@ -1,20 +1,26 @@
 import { useState } from "react";
 
-export default function Card({ id, title, blurb, frontImage, backImage, tech }) {    
+export default function Card(props) {
+    let id = props.id;
+    let title = props.title;
+    let blurb = props.blurb; 
+    let frontImage = props.frontImage; 
+    let backImage = props.backImage;
+    let tech = props.tech;
 
-    const [showSide, setShowSide] = useState(false)
+    const [showSide, setShowSide] = useState(false);
 
-    function Button() {
-        function handleClick() {
-            const cardDiv = document.querySelector(".card");
+    function handleClick() { 
+        const cardDiv = document.querySelector(`.card${props.id}`);
 
-            showSide === false ?
-            cardDiv.setAttribute("class", `card ${id} flip`) :
-            cardDiv.setAttribute("class", `card ${id}`);
-            
-            setShowSide(!showSide)
-        }
-    
+        showSide === false ?
+        cardDiv.setAttribute("class", `card${props.id} flip`) :
+        cardDiv.setAttribute("class", `card${props.id}`);
+        
+        setShowSide(!showSide);
+    }
+
+    function Button() {    
         return (
             <button onClick={handleClick}>
                 {showSide === true ? <>&or;</> : <>&and;</>}
@@ -22,11 +28,24 @@ export default function Card({ id, title, blurb, frontImage, backImage, tech }) 
         )
     }
 
+    function testAlert() {
+        console.log(`${props.id}`);
+    }
+
+    function TestButton() {
+        return (
+        <button onClick={testAlert}>
+            Test
+            {console.log("test button")}
+        </button>
+        );
+    }
+
     return (
         <>
-            <div className="card-container">
-                <div className={"card " + id}>
+                <div className={`card${id}`}>
                     <div className="card-front">
+                        {/* <TestButton /> */}
                         <Button />
                         <p className="title">{title}</p>
                         <img className="cardImg" src={require("../images/" + frontImage + ".png")} alt="a pic" />
@@ -39,7 +58,6 @@ export default function Card({ id, title, blurb, frontImage, backImage, tech }) 
                         <p className="description">{tech}</p>
                     </div>
                 </div>
-            </div>
         </>
     );
 }
