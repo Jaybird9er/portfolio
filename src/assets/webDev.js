@@ -37,7 +37,7 @@ let projects = [
 		title: "ProResume Solutions",
 		// card front
 		frontImage: "ProResume_Img",
-		blurb: "A storefront for prospective clients",
+		blurb: "A storefront for prospective clients A storefront for prospective clients A storefront for prospective clients",
 		// card back
 		backImage: "Test_Img",
 		tech: [

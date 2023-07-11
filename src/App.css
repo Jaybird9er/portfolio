@@ -1,64 +1,39 @@
 :root {
-  --sml-height: calc(100vw * 1.15);
-  --med-height: calc(100vw * 0.75);
-  --lg-height: calc(100vw * 0.55);
-  --ratio: calc(1920 / 1080)
+  --ratio: calc(1920 / 1080);
+  --text: clamp(0.5rem, 2.5vw, 2rem);
 }
-
-
 
 h1 {
-  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Tahoma, Verdana, sans-serif;
 }
-
 
 .work {
   width: 100%;
   box-sizing: border-box;
-  /* can use padding at different breakpoints to adjust margins */
-  padding: 0 10%; 
+  /* padding at different breakpoints adjusts margins */
+  padding: 0 5%; 
 }
+
+/* Card Containers */
 
 /* CARD CONTAINER HOLDS EVERYTHING */
 .card-container {
   position: relative;
-  /* width: 99%;
-  height: 100vw; */
-  
-  aspect-ratio: var(--r);
   width: min(90%, min(1920px, 90vh*(var(--r))));
-  /* adjust height for cards here */
-  height: 85vw;
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  height: 95vw;
   background: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  margin: 10vw 0;
+  margin-bottom: 5vw;
+  perspective: 500px;
 }
   
 /* EACH CARD HOLDS THE FRONT AND BACK FACES */
 .card1, .card2, .card3, .card4 { /* Cards must be added manually with the id appended */
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
   transform-style: preserve-3d;
   transition: all 0.9s ease;
   display: flex;
   align-content: center;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 /* THE PSUEDO CLASS CONTROLS THE FLIP */
@@ -68,11 +43,8 @@ img {
 
 .card-front {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
   backface-visibility: hidden;
   overflow: hidden;
   background: #ffc728;
@@ -81,11 +53,8 @@ img {
 
 .card-back {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
   backface-visibility: hidden;
   overflow: hidden;
   background: #c64242;
@@ -93,47 +62,91 @@ img {
   transform: rotateY(180deg);
 }
 
+/* Card Containers */
+
+
 
 /* Styling for the cards */
-.card-front, p, .card-back {
-  font-family: 'zilla slab', sans-serif;
-  /* padding: 2%; */
-  font-weight: bold;
-  font-size: clamp(0.5rem, 2.5vw, 2rem);
-  text-align: center;
-  margin: 1.3vw 0;
+.card-front, .card-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* .card-front p, .card-back p {
+.title {
+  font-size: calc(var(--text) * 1.3);
+  margin: 4vh 0 2vh 0;
+}
+
+.line-break {
+  width: 95%;
+  padding: 0.5px 0;
+  color: black;
+  background-color: black;
+  border-width: 0;
+  margin: 2vh 0 2vh;
+}
+
+img {
+  max-width: 95%;
+  height: auto;
+}
+
+.blurb, .description {
   font-family: 'zilla slab', sans-serif;
-  padding: 1;
-  font-weight: normal;
-  font-size: 12px;
-  text-align: center;
-} */
+  font-size: var(--text);
+  text-align: start;
+  margin: 0;
+}
+
+.card-button {
+  height: fit-content;
+  font-size: var(--text);
+  margin-left: 2vw;
+}
+
+.detail-grid {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
 
 /* phones */
 @media (min-width: 576px) {
+  .work {
+    padding: 0 10%;
+  }
   .card-container {
-    /* width: 95%; */
+    height: 85vw;
   }
 }
 
 /* tablets */
 @media (min-width: 750px) {
+  .work {
+    padding: 0 15%;
+  }
   .card-container {
-    /* max-width: 66%; */
+    height: 75vw;
   }
 }
 
 /* laptops */
 @media (min-width: 992px) {
+  .work {
+    padding: 0 20%;
+  }
+  .card-container {
+    height: 65vw;
+  }
 }
 
 /* extra large desktop screens */
 @media (min-width: 1200px) {
-  /* .card-container {
-    max-width: 50%;
-    height: var(--lg-height);
-  } */
+  .work {
+    padding: 0 25%;
+  }
+  .card-container {
+    height: 55vw;
+  }
 }

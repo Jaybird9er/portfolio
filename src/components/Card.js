@@ -22,7 +22,7 @@ export default function Card(props) {
 
     function Button() {    
         return (
-            <button onClick={handleClick}>
+            <button onClick={handleClick} className="card-button">
                 {showSide === true ? <>&or;</> : <>&and;</>}
             </button>
         )
@@ -46,16 +46,24 @@ export default function Card(props) {
                 <div className={`card${id}`}>
                     <div className="card-front">
                         {/* <TestButton /> */}
-                        <Button />
-                        <p className="title">{title}</p>
+                        <h3 className="title">{title}</h3>
+                        <span className="line-break"></span>
                         <img className="cardImg" src={require("../images/" + frontImage + ".png")} alt="a pic" />
-                        <p className="blurb">{blurb}</p>
+                        <span className="line-break"></span>
+                        <div className="detail-grid">
+                            <p className="blurb">{blurb}</p>
+                            <Button />
+                        </div>
                     </div>
                     <div className="card-back">
-                        <Button />
-                        <p className="title">{title}</p>
+                        <h3 className="title">{title}</h3>
+                        <span className="line-break"></span>
                         <img className="cardImg" src={require("../images/" + backImage + ".png")} alt="a pic" />
-                        <p className="description">{tech}</p>
+                        <span className="line-break"></span>
+                        <div className="detail-grid">
+                            <p className="description">{tech}</p>
+                            <Button />
+                        </div>
                     </div>
                 </div>
         </>
