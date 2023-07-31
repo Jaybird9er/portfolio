@@ -8,6 +8,7 @@ export default function Card(props) {
     let backImage = props.backImage;
     let tech = props.tech;
 
+
     const [showSide, setShowSide] = useState(false);
 
     function handleClick() { 
@@ -28,18 +29,40 @@ export default function Card(props) {
         )
     }
 
-    function testAlert() {
-        console.log(`${props.id}`);
-    }
+    // function GetHeight() {
+    //     const [height, setHeight] = useState(0);
+    //     const ref = useRef(null);
 
-    function TestButton() {
-        return (
-        <button onClick={testAlert}>
-            Test
-            {console.log("test button")}
-        </button>
-        );
-    }
+    //     useEffect(() => {
+    //         setHeight(ref.current.clientHeight);
+    //     }, [])
+    //     return (
+    //         <div ref={ref}>
+    //             {height}
+    //         </div>
+    //     )
+    // }
+
+    // function testAlert() {
+    //     console.log(`${props.id}`);
+    // }
+
+    // function TestButton() {
+    //     return (
+    //     <button onClick={testAlert}>
+    //         Test
+    //         {console.log("test button")}
+    //     </button>
+    //     );
+    // }
+
+
+    //Cards Container
+        // Card
+            // Card-front
+                //Detail-grid
+            // Card-back
+                //Detail-grid
 
     return (
         <>
@@ -56,6 +79,7 @@ export default function Card(props) {
                         </div>
                     </div>
                     <div className="card-back">
+                        {/* <GetHeight /> */}
                         <h3 className="title">{title}</h3>
                         <span className="line-break"></span>
                         <img className="cardImg" src={require("../images/" + backImage + ".png")} alt="a pic" />

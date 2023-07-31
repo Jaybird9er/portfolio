@@ -1,6 +1,6 @@
 import Card from "./Card";
 
-const Cards = function({array}) {
+const Cards = function({array, props}) {
     return (
         array.map((item, index) => 
             <div className="card-container" key={index}>
@@ -11,7 +11,10 @@ const Cards = function({array}) {
                     blurb={item.blurb}
                     backImage={item.backImage}
                     tech={item.tech}
-                />
+                >
+                {/* comment this out to get the cards back */}
+                {props.children}
+                </Card>
             </div>
         )
     );
